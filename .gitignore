@@ -4,7 +4,8 @@ frontend/node_modules
 .pnp.js
 
 #backend
-
+backend/node_modules
+backend/.env
 # production
 frontend/build
 
