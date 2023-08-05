@@ -1,8 +1,10 @@
-import '../styles/componentStyle.css'
+import '../Styles/Comp.css'
+import WeatherApp from './WeatherApp';
+
 const DashBoard = () => {
     return ( 
         <div className="dash">
-            {/* <CreateCourse /> */}
+            <WeatherApp />
         </div>
      );
 }

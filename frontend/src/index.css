@@ -17,7 +17,7 @@ code {
   box-sizing: border-box;
 }
 html{
-  background-color: #303030;
+  background-color: white;
 }
 .nav-it{
   font-weight: 600;
@@ -26,6 +26,10 @@ html{
 a.active div{
   /* background-color: #151515; */
   /* border: 1px solid white; */
-  color: #EA047E;
+  color: #DC3535;
   border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* Width of the scrollbar */
 }

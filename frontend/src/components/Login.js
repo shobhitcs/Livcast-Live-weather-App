@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import '../styles/formStyle.css';
+import '../Styles/Form.css';
 import { useLogin } from "../hooks/useLogin";
 import { NavLink } from 'react-router-dom';
 

@@ -1,4 +1,4 @@
-
+import '../Styles/Comp.css';
 const Home = () => {
     return ( 
         <div className="home">
