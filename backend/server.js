@@ -12,7 +12,7 @@ app.listen(process.env.PORT,()=>{
     console.log("listening on port",process.env.PORT);
 })}).catch((err)=> console.log(err))
 
-app.use(cors({origin:['https://skycast-api.onrender.com']}))
+app.use(cors({origin:['https://skycast-440k.onrender.com']}))
 app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'))
