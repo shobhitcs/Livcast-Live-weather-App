@@ -14,7 +14,6 @@ app.listen(process.env.PORT,()=>{
 
 app.use(cors({origin:['https://skycast-440k.onrender.com']}))
 app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'))
 app.use('/api/user',userRoutes);
 app.use('/api/data',dataRoutes);
