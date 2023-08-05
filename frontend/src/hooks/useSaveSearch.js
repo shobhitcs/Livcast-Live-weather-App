@@ -12,7 +12,7 @@ export const useSaveSearch = () => {
         setIsSaveLoading(true);
         setSaveError(null);
 
-        const dataresponse = await fetch('/api/data/saverecent', {
+        const dataresponse = await fetch('https://skycast-api.onrender.com/api/data/saverecent', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

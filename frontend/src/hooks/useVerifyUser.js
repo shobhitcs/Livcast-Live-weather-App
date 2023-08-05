@@ -12,7 +12,7 @@ export const useVerifyUser = () => {
         // console.log(local.email,local.token);
         if (local) {
 
-            const response = await fetch('/api/data/findperson', {
+            const response = await fetch('https://skycast-api.onrender.com/api/data/findperson', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -19,7 +19,7 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formData);
+    // console.log(formData);
     await login(formData.email, formData.password);
     setFormData({
       email: '',

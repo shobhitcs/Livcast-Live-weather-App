@@ -11,7 +11,7 @@ export const useLogin=()=>{
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch('/api/user/login',{
+        const response = await fetch('https://skycast-api.onrender.com/api/user/login',{
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({email,password})
@@ -23,7 +23,7 @@ export const useLogin=()=>{
             setError(json.error);
         }
         if(response.ok){
-            const dataresponse = await fetch('/api/data/findperson',{
+            const dataresponse = await fetch('https://skycast-api.onrender.com/api/data/findperson',{
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json',
                             'Authorization': `Bearer ${json.email} ${json.token}`},
