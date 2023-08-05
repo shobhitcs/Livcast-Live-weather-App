@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import { TextField, Button} from '@mui/material';
 import '../Styles/Form.css';
 import { useLogin } from "../hooks/useLogin";
 import { NavLink } from 'react-router-dom';
@@ -12,11 +11,11 @@ const Login = () => {
   });
 
   const handleChange = (event) => {
-    const { name, value} = event.target;
+    const { name, value } = event.target;
 
     setFormData({ ...formData, [name]: value });
   };
-  const { login, error, isLoading } = useLogin();
+  const { login, error} = useLogin();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,17 +26,7 @@ const Login = () => {
       password: '',
     });
   };
-  const buttonStyle = {
-    // backgroundColor: '#f50057',
-    // color: '#ffffff',
-    // padding: '8px 16px',
-    // border: 'none',
-    // borderRadius: '4px',
-    // fontSize: '14px',
-    // cursor: 'pointer',
-    // margin: '20px 0'
 
-  };
 
   return (
     <form className="formContainer" onSubmit={handleSubmit}>
@@ -65,17 +54,19 @@ const Login = () => {
           margin="normal"
           required
         />
-        <NavLink style={{'width':'100%',textDecoration:'none'}} to="/">
+        
+        <NavLink style={{ 'width': '100%', textDecoration: 'none' }} to="/">
           <div className="forget">Forget password ?</div>
         </NavLink>
-        <Button style={buttonStyle} type="submit" variant="contained" color="primary" fullWidth>
+        <Button type="submit" variant="contained" color="primary" fullWidth>
           Login
         </Button>
         {error && <div className="error">{error}</div>}
-        
-          <div className="forget">Don't have a account ?<NavLink style={{'width':'100%',textDecoration:'none'}} to="/signup"> Create Account</NavLink></div>
-        
+
+        <div className="forget">Don't have a account ?<NavLink style={{ 'width': '100%', textDecoration: 'none' }} to="/signup"> Create Account</NavLink></div>
+
       </div>
+      <br />
     </form>
   );
 };

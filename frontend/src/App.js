@@ -6,7 +6,6 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import { useSelector } from 'react-redux';
 import DashBoard from './components/Dashboard';
-import Footer from './components/Footer';
 import { useVerifyUser } from './hooks/useVerifyUser';
 import { useEffect } from 'react';
 // import NNavbar from './components/newnavbar';
@@ -15,18 +14,17 @@ function App() {
   const user = useSelector((state) => {
     return state.users.user;
   })
-  const person = useSelector((state) => {
-    return state.persons.person;
-  })
+  // const person = useSelector((state) => {
+  //   return state.persons.person;
+  // })
 
-  const { verifystate, isVerifying } = useVerifyUser();
+  const { verifystate } = useVerifyUser();
 
   useEffect(() => {
     verifystate();
   },[]);
 
-  console.log(person, 123);
-  // console.log('out Verified'); 
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -38,7 +36,6 @@ function App() {
           <Route path='/signup' element={!user ? <Signup /> : <Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }

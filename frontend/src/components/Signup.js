@@ -1,25 +1,20 @@
 import React, { useState } from 'react';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-// import Checkbox from '@mui/material/Checkbox';
-// import FormControlLabel from '@mui/material/FormControlLabel';
 import '../Styles/Form.css';
 import { useSignup } from "../hooks/useSignup";
-import { useSelector } from "react-redux";
+import { TextField, Button } from '@mui/material';
+// import { useSelector } from "react-redux";
 
 
 const Signup = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    // isStudent: false,
-    // rollnumber: '',
     password: '',
   });
 
-  const person = useSelector((state) => {
-    return state.persons.person;
-  })
+  // const person = useSelector((state) => {
+  //   return state.persons.person;
+  // })
   //  console.log(person,123456789);
 
   const handleChange = (event) => {
@@ -27,7 +22,7 @@ const Signup = () => {
 
     setFormData({ ...formData, [name]: value });
   };
-  const {signup,error,isLoading} = useSignup();
+  const {signup,error} = useSignup();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -36,8 +31,6 @@ const Signup = () => {
     setFormData({
       name: '',
       email: '',
-      // isStudent: false,
-      // rollnumber: '',
       password: '',
     });
   };
@@ -46,20 +39,6 @@ const Signup = () => {
     <form className="formContainer" onSubmit={handleSubmit}>
       <div className="form-box">
         <h1 className="form-head">SIGNUP</h1>
-        {/* <div className="question">
-          
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={formData.isStudent}
-                onChange={handleChange}
-                name="isStudent"
-                color="primary"
-              />
-            }
-            label="Yes, I am a student"
-          />
-        </div> */}
         <TextField
           label="Name"
           name="name"
@@ -79,18 +58,6 @@ const Signup = () => {
           margin="normal"
           required
         />
-        {/* {formData.isStudent && (
-            <TextField
-            label="Roll Number"
-            name="rollnumber"
-            type="number"
-            value={formData.rollnumber}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-            required
-          />
-        )} */}
         <TextField
             label="Password"
             name="password"

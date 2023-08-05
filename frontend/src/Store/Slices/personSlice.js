@@ -10,6 +10,11 @@ const personSlice=createSlice({
         },
         personLogout(state,action){
             state.person = null;
+        },
+        personSaveSearch(state,action){
+            if(state.person!=null){
+                state.person.searches = action.payload;
+            }
         }
         // userLogin(state,action){
         //     state.user=action.payload;
@@ -20,4 +25,4 @@ const personSlice=createSlice({
     }
 });
 export {personSlice};
-export const {personLogin,personLogout}=personSlice.actions;
+export const {personLogin,personLogout,personSaveSearch}=personSlice.actions;

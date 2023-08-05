@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Button, Drawer, List, ListItem, ListItemText, IconButton, ListItemIcon } from '@mui/material';
+import { AppBar, Toolbar, Typography, Drawer, List, ListItem, ListItemText, IconButton, ListItemIcon } from '@mui/material';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useLogout } from "../hooks/useLogout";
@@ -14,7 +14,7 @@ const Navbar = () => {
     const { logout } = useLogout();
     const user = useSelector((state) => state.users.user);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
+    // console.log(user);
     const handleLogout = () => {
         logout();
         handleDrawerClose();
@@ -50,15 +50,6 @@ const Navbar = () => {
         fontFamily: 'Maven Pro, sans-serif',
         fontWeight: 'bold',
     };
-
-    const logoutButtonStyle = {
-        color: '#0B2447',
-        marginRight: '16px',
-        fontSize: '12px',
-        backgroundColor: '#A5D7E8',
-    };
-
-
     return (
         <>
             <AppBar position="fixed" style={appBarStyle}>
@@ -74,9 +65,11 @@ const Navbar = () => {
                         <MenuIcon />
                     </IconButton>
                     <img src={Logoimg} height={'35px'} alt="LOGO" />
-                    <Typography variant="h6" style={logoTextStyle}>
-                        skycast
-                    </Typography>
+                    <NavLink to='/' style={{textDecoration: 'none'}}>
+                        <Typography variant="h6" style={logoTextStyle}>
+                            skycast
+                        </Typography>
+                    </NavLink>
                     {/* {!user && (
                         <NavLink to="/login" style={linkStyle}>
                             <div className='nav-it'>

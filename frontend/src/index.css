@@ -17,7 +17,8 @@ code {
   box-sizing: border-box;
 }
 html{
-  background-color: white;
+  background-color: whitesmoke;
+  scroll-behavior: smooth;
 }
 .nav-it{
   font-weight: 600;
