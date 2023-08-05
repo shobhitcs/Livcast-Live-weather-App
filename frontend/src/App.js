@@ -18,7 +18,7 @@ function App() {
   //   return state.persons.person;
   // })
 
-  const { verifystate } = useVerifyUser();
+  const { verifystate , isVerifying } = useVerifyUser();
 
   useEffect(() => {
     verifystate();
@@ -28,13 +28,14 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* {!isVerifying && < Navbar />} */}
+        
         <Navbar />
+        {!isVerifying &&
         <Routes>
           <Route path='/' element={!user ? <Home /> : <DashBoard />} />
           <Route path='/login' element={!user ? <Login /> : <Navigate to="/" />} />
           <Route path='/signup' element={!user ? <Signup /> : <Navigate to="/" />} />
-        </Routes>
+        </Routes>}
       </BrowserRouter>
     </div>
   );
