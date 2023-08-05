@@ -1,4 +1,5 @@
 require('dotenv').config()
+const cors = require('cors');
 const express=require('express');
 const morgan=require('morgan');
 const dataRoutes=require('./routes/dataRoutes')
