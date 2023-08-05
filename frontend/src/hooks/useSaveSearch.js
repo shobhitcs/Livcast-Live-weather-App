@@ -29,7 +29,7 @@ export const useSaveSearch = () => {
         }
         if (dataresponse.ok) {
             setIsSaveLoading(false);
-            console.log(datajson,9865);
+            // console.log(datajson,9865);
             // dispatch(userLogin(json));
             dispatch(personSaveSearch(datajson.searches));
         }
