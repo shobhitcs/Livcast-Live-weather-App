@@ -26,7 +26,14 @@ const Login = () => {
       password: '',
     });
   };
-
+  const handleGuest = async (event) => {
+    event.preventDefault();
+    setFormData({
+      email: 'guest@example.com',
+      password: '12345678',
+    });
+    await login('guest@example.com', '12345678');
+  }
 
   return (
     <>
@@ -62,10 +69,13 @@ const Login = () => {
           <Button type="submit" variant="contained" color="primary" fullWidth>
             Login
           </Button>
+          <Button onClick={handleGuest} variant="contained" fullWidth sx={{ marginTop: '10px', backgroundColor: '#EA1179' }}>
+            Login as Guest
+          </Button>
           {error && <div className="error">{error}</div>}
 
           <div className="forget">Don't have a account ?<NavLink style={{ 'width': '100%', textDecoration: 'none' }} to="/signup"> Create Account</NavLink></div>
-          {isLoading &&  <Box sx={{ width: '100%' }}>
+          {isLoading && <Box sx={{ width: '100%' }}>
             <div className="load">Signing In...  Please wait for a while</div>
             <LinearProgress color='primary' />
           </Box>}
