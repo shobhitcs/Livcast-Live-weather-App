@@ -70,7 +70,7 @@ const Login = () => {
           <Button type="submit" variant="contained" color="primary" fullWidth disabled={isLoading}>
             Login
           </Button>
-          <Button onClick={handleGuest} variant="contained" fullWidth disabled={isLoading} sx={{ marginTop: '10px', backgroundColor: '#EA1179' }}>
+          <Button onClick={handleGuest} variant="contained" fullWidth disabled={isLoading} sx={{ marginTop: '10px' }}>
             Login as Guest
           </Button>
           {/* {error && <div className="error">{error}</div>} */}

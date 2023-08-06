@@ -24,15 +24,15 @@ export const useSaveSearch = () => {
         const datajson = await dataresponse.json();
         // console.log(datajson,5698);
         if (!dataresponse.ok) {
-            setIsSaveLoading(false);
+            // setIsSaveLoading(false);
             setSaveError(datajson.error);
         }
         if (dataresponse.ok) {
-            setIsSaveLoading(false);
             // console.log(datajson,9865);
             // dispatch(userLogin(json));
             dispatch(personSaveSearch(datajson.searches));
         }
+        setIsSaveLoading(false);
     }
     return { saveSearch, isSaveLoading, saveError };
 }

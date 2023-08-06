@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import DashBoard from './components/Dashboard';
 import { useVerifyUser } from './hooks/useVerifyUser';
 import { useEffect } from 'react';
-// import NNavbar from './components/newnavbar';
+import { CircularProgress } from '@mui/material';
 
 function App() {
   const user = useSelector((state) => {
@@ -30,6 +30,11 @@ function App() {
       <BrowserRouter>
         
         <Navbar />
+        {isVerifying && (
+          <div className="load-verify" style={{marginTop: '70px'}}>
+            <CircularProgress />
+          </div>
+        )}
         {!isVerifying &&
         <Routes>
           <Route path='/' element={!user ? <Home /> : <DashBoard />} />

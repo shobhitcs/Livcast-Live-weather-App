@@ -25,8 +25,8 @@ const WeatherApp = () => {
             // console.log(json)
             if (json){
                 setWeatherData(json);
-                if(cityName!=="" && !saveError){
-                    await saveSearch(user.email, cityName.toUpperCase());
+                if(city!=="" && !saveError){
+                    await saveSearch(user.email, city.toUpperCase());
                 }
             }    
         }
