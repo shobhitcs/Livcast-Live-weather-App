@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, LinearProgress, Box } from '@mui/material';
+import { TextField, Button, LinearProgress, Box, Alert } from '@mui/material';
 import '../Styles/Form.css';
 import { useLogin } from "../hooks/useLogin";
 import { NavLink } from 'react-router-dom';
@@ -62,17 +62,18 @@ const Login = () => {
             margin="normal"
             required
           />
+          {error && <Alert severity="error" sx={{width: '100%'}}>Login Failed ! Try Again</Alert>}
 
           <NavLink style={{ 'width': '100%', textDecoration: 'none' }} to="/">
             <div className="forget">Forget password ?</div>
           </NavLink>
-          <Button type="submit" variant="contained" color="primary" fullWidth>
+          <Button type="submit" variant="contained" color="primary" fullWidth disabled={isLoading}>
             Login
           </Button>
-          <Button onClick={handleGuest} variant="contained" fullWidth sx={{ marginTop: '10px', backgroundColor: '#EA1179' }}>
+          <Button onClick={handleGuest} variant="contained" fullWidth disabled={isLoading} sx={{ marginTop: '10px', backgroundColor: '#EA1179' }}>
             Login as Guest
           </Button>
-          {error && <div className="error">{error}</div>}
+          {/* {error && <div className="error">{error}</div>} */}
 
           <div className="forget">Don't have a account ?<NavLink style={{ 'width': '100%', textDecoration: 'none' }} to="/signup"> Create Account</NavLink></div>
           {isLoading && <Box sx={{ width: '100%' }}>

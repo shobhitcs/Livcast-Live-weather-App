@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Styles/Form.css';
 import { useSignup } from "../hooks/useSignup";
-import { TextField, Button, LinearProgress, Box } from '@mui/material';
+import { TextField, Button, LinearProgress, Box, Alert } from '@mui/material';
 // import { useSelector } from "react-redux";
 
 
@@ -68,10 +68,11 @@ const Signup = () => {
             margin="normal"
             required
         />
-        <Button fullWidth type="submit" variant="contained" color="primary">
+        {error && <Alert severity="error" sx={{width: '100%'}}>Sign Up Failed ! Try Again</Alert>}
+        <Button fullWidth type="submit" variant="contained" color="primary" disabled={isLoading}>
           Sign Up
         </Button>
-        {error && <div className="error">{error}</div>}
+        {/* {error && <div className="error">{error}</div>} */}
         {isLoading &&  <Box sx={{ width: '100%' }}>
             <div className="load">Signing Up...  Please wait for a while</div>
             <LinearProgress color='primary' />
