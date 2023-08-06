@@ -31,7 +31,7 @@ function App() {
         
         <Navbar />
         {isVerifying && (
-          <div className="load-verify" style={{marginTop: '70px'}}>
+          <div className="load-verify" style={{paddingTop: '70px', minHeight:'100vh', display: 'flex', alignItems: 'center',justifyContent: 'center' }}>
             <CircularProgress />
           </div>
         )}
