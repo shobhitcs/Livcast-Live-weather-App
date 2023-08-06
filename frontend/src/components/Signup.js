@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Styles/Form.css';
 import { useSignup } from "../hooks/useSignup";
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, LinearProgress, Box } from '@mui/material';
 // import { useSelector } from "react-redux";
 
 
@@ -22,7 +22,7 @@ const Signup = () => {
 
     setFormData({ ...formData, [name]: value });
   };
-  const {signup,error} = useSignup();
+  const {signup,error,isLoading} = useSignup();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -72,6 +72,10 @@ const Signup = () => {
           Sign Up
         </Button>
         {error && <div className="error">{error}</div>}
+        {isLoading &&  <Box sx={{ width: '100%' }}>
+            <div className="load">Signing Up...  Please wait for a while</div>
+            <LinearProgress color='primary' />
+          </Box>}
       </div>
     </form>
   );
