@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import DashBoard from './components/Dashboard';
 import { useVerifyUser } from './hooks/useVerifyUser';
 import { useEffect } from 'react';
-import { CircularProgress,Snackbar,Alert } from '@mui/material';
+import { CircularProgress, Snackbar, Alert } from '@mui/material';
 
 function App() {
   const user = useSelector((state) => {
@@ -53,7 +53,7 @@ function App() {
       </BrowserRouter>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
-        Please be aware that our website's backend is hosted on a free server, which might lead to initial response times of over 30 seconds; subsequent responses will be much quicker as the server goes to sleep after periods of inactivity.
+          Our website is hosted on a free server, so initial responses could take over 30 seconds; later responses will be faster as the server sleeps during inactivity.
         </Alert>
       </Snackbar>
     </div>
