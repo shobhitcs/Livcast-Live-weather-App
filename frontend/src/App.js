@@ -51,7 +51,7 @@ function App() {
             <Route path='/signup' element={!user ? <Signup /> : <Navigate to="/" />} />
           </Routes>}
       </BrowserRouter>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar open={open} autoHideDuration={12000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
           Our website is hosted on a free server, so initial responses could take over 30 seconds; later responses will be faster as the server sleeps during inactivity.
         </Alert>
