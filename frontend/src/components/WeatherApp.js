@@ -53,6 +53,7 @@ const WeatherApp = () => {
     const handleRecentClick = async (city) => {
         setCityName(city);
         if (city !== "")
+            window.scrollTo({top: 0, left:0, behavior: 'smooth'})
             await fetchWeatherData(city);
     };
 
