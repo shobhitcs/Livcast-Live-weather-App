@@ -30,7 +30,7 @@ const Login = () => {
     event.preventDefault();
     setFormData({
       email: 'guest@example.com',
-      password: '123456',
+      password: '12345678',
     });
     await login('guest@example.com', '12345678');
   }
